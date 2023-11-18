@@ -12,7 +12,7 @@
         Sign up now <v-icon icon="mdi-chevron-right"></v-icon>
       </v-btn>
     </v-row>
-    <image-comp src="src/assets/logo.png" />
+    <v-img src="@/assets/logo.png" />
     <v-form ref="logInForm" @submit.prevent="logIn">
       <v-checkbox
         v-model="usePhone"

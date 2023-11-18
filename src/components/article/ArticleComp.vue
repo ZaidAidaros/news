@@ -50,10 +50,10 @@
           show ? "mdi-chevron-up" : "mdi-gesture-tap"
         }}</v-icon>
       </v-btn>
-      <v-spacer />
+      <!-- <v-spacer />
       <v-btn color="blue-lighten-2" variant="text" @click="shareArticle"
         >Share<v-icon end>mdi-share-variant</v-icon>
-      </v-btn>
+      </v-btn> -->
       <v-spacer />
       <like-comp
         :article-likes="article.articleLikes"

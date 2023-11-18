@@ -48,19 +48,19 @@
             
               <v-menu>
             <template v-slot:activator="{ props }">
-              <v-btn icon="mdi-dots-vertical" v-bind="props"></v-btn>
+              <v-icon v-bind="props">mdi-dots-vertical</v-icon>
             </template>
             <v-list>
               <v-list-item
                 v-for="(item, i) in items"
                 :key="i"
               >
-                <v-list-item-title>{{ item.title }}</v-list-item-title>
+                <v-list-item-title @click="onMenuItemClick(item)">{{ item.title }}</v-list-item-title>
               </v-list-item>
             </v-list>
           </v-menu>
       
-            </UserComp>
+          </UserComp>
             
           </template>
         </v-virtual-scroll>
@@ -88,6 +88,10 @@ export default {
       currentWindow: "newWrittersRequests",
       currentIndex: 0,
       sVal: null,
+      items:[
+        {title:"Stop User",value:"stopUser"},
+        {title:"Upgrade User",value:"upgradeUser"},
+      ],
       windows: [
         {
           index: 0,
@@ -132,6 +136,9 @@ export default {
       if (!window.users.length) {
         await this.loadUsers(window);
       }
+    },
+    onMenuItemClick:function(item){
+
     },
     contains: function (prop, val) {
       if (prop) {
